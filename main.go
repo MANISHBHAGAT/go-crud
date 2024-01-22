@@ -7,7 +7,6 @@ import (
 )
 
 func init(){
-	
 	initializers.LoadEnvVariables()
 	initializers.ConnectToDB()
 }
@@ -16,11 +15,11 @@ func main() {
 
 	r := gin.Default()
 
-	r.POST("/books", controllers.PostsCreate)
-	r.PUT("/books/:id", controllers.PostsUpdate)
-	r.GET("/books", controllers.PostsIndex)
-	r.GET("/books/:id", controllers.PostsShow)
-	r.DELETE("/books/:id", controllers.PostsDelete)
+	r.POST("/books", controllers.BooksCreate)
+	r.PUT("/books/:id", controllers.BooksUpdate)
+	r.GET("/books", controllers.BooksIndex)
+	r.GET("/books/:id", controllers.BooksShow)
+	r.DELETE("/books/:id", controllers.BooksDelete)
 	r.Run()
 
 }
